@@ -1,0 +1,31 @@
+# Big files, dev-only stuff, and secrets never enter the image.
+.git
+.gitignore
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+.DS_Store
+
+# Frontend belongs on Vercel, not in the backend image.
+frontend/
+
+# Data — Supabase is source of truth at runtime.
+h-and-m-personalized-fashion-recommendations/
+article_embeddings.parquet
+global_avg_vector.npy
+
+# One-time setup scripts and notebooks.
+article_embeddings.ipynb
+init.ipynb
+upload_to_supabase.py
+backfill_metadata.py
+upload_images.py
+
+# Local design doc.
+context.md
+
+# SQL migrations already applied to Supabase.
+backend/sql/
+backend/smoke_test.py
