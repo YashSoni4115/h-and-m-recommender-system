@@ -2,3 +2,4 @@ h-and-m-personalized-fashion-recommendations/
 article_embeddings.parquet
 global_avg_vector.npy
 .DS_Store
+.env
