@@ -1,5 +1,31 @@
+# Data (25 GB Kaggle dataset — download separately)
 h-and-m-personalized-fashion-recommendations/
+
+# Generated embedding artifacts (regenerable via notebooks, huge)
 article_embeddings.parquet
 global_avg_vector.npy
-.DS_Store
+
+# One-time setup scripts / notebooks — kept locally, not deployed
+article_embeddings.ipynb
+init.ipynb
+upload_to_supabase.py
+backfill_metadata.py
+upload_images.py
+
+# Local project context (living design doc)
+context.md
+
+# Python
+.venv/
+__pycache__/
+*.pyc
 .env
+.env.*
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# OS
+.DS_Store
