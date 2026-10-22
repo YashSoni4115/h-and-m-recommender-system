@@ -1,0 +1,19 @@
+# Pings the backend so the free Supabase project isn't paused for inactivity
+# (it pauses after ~7 days without traffic). /health queries the database.
+name: keep-alive
+
+on:
+  schedule:
+    - cron: "0 12 */3 * *" # every 3 days
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping /health
+        # Retries cover the Fly machine cold-starting.
+        run: |
+          curl --fail --silent --show-error --max-time 60 \
+            --retry 5 --retry-delay 15 --retry-all-errors \
+            https://h-and-m-recommender-system-zahbww.fly.dev/health
